@@ -2,69 +2,63 @@
 
 ## Overview
 
-The **Voice-Based Authentication System** is a biometric security solution that authenticates users based on their voice patterns. This system leverages machine learning techniques to analyze and verify a user's voiceprint, providing a secure and user-friendly authentication method.
+The **Voice-Based Authentication System** is a biometric security solution that authenticates users based on their voice patterns. This system leverages machine learning techniques to analyze and verify a user's voiceprint, providing a secure and user-friendly authentication method. It also integrates **Azure Blob Storage** for securely storing and retrieving voice data.
 
-### Features
+## Features
 
-**Biometric Security:** Uses voice patterns for authentication.
+- **Biometric Security**: Uses voice patterns for authentication.
+- **Machine Learning**: Implements AI models to distinguish between users.
+- **Speaker Recognition**: Identifies and verifies users based on their unique voiceprints.
+- **Real-Time Authentication**: Provides quick and accurate verification.
+- **Secure and Efficient**: Minimizes the risk of unauthorized access.
+- **Cloud Storage**: Uses Azure Blob Storage for storing voice data securely.
 
-**Machine Learning:** Implements AI models to distinguish between users.
+## Technologies Used
 
-**Speaker Recognition:** Identifies and verifies users based on their unique voiceprints.
+- **Python**: Core programming language.
+- **PyAudio**: Capturing and processing voice input.
+- **Librosa**: For audio processing and feature extraction.
+- **NumPy & SciPy**: Data handling and signal processing.
+- **scikit-learn**: Used for machine learning model implementation.
+- **Azure Storage Blob**: Cloud storage for voice data.
 
-**Real-Time Authentication:** Provides quick and accurate verification.
+## Installation
 
-**Secure and Efficient:** Minimizes the risk of unauthorized access.
-
-### Technologies Used
-
-**Python:** Core programming language.
-
-**Librosa:** For audio processing and feature extraction.
-
-**TensorFlow/Keras:** Deep learning framework for model training.
-
-**scikit-learn:** Used for machine learning model implementation.
-
-**NumPy & Pandas:** Data handling and preprocessing.
-
-**Flask:** Web framework for API integration (if applicable).
-
-Installation
-
-Prerequisites
+### Prerequisites
 
 Ensure you have the following installed on your system:
 
-Python 3.x
+- Python 3.x
+- Pip (Python package manager)
 
-Pip (Python package manager)
+### Steps
 
-Steps
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Mohammed8ishaque/Voice-Based-Authentication.git
+   cd Voice-Based-Authentication
+   ```
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Set up Azure Storage:
+   - Update `AZURE_STORAGE_CONNECTION_STRING` in `authentication.py` and `register.py`.
 
-Clone the repository:
+4. Run the system:
+   ```bash
+   python authentication.py
+   ```
 
-git clone https://github.com/Mohammed8ishaque/Voice-Based-Authentication.git
-cd Voice-Based-Authentication
+## Usage
 
-Install the required dependencies:
+1. **Registration**: Users must provide voice samples for enrollment by running `register.py`. The system extracts voice features and stores them in Azure Blob Storage.
+2. **Feature Extraction**: The system processes voice data and saves extracted features for authentication.
+3. **Authentication**: Users verify their identity using `authentication.py`, which compares their voice against stored data.
 
-pip install -r requirements.txt
+## Project Structure
 
-Run the system:
-
-python authentication.py
-
-Usage
-
-Registration: Users must provide voice samples for enrollment by running register.py.
-
-Feature Extraction: The system extracts unique voice features and saves them.
-
-Authentication: Users can verify their identity using authentication.py.
-
-Project Structure
-
+```
 Voice-Based-Authentication/
 │── authentication.py      # Code that authenticates the person
 │── register.py            # Code that registers the person
@@ -72,22 +66,19 @@ Voice-Based-Authentication/
 ├── ishu.wav               # Sample voice data
 │── requirements.txt       # Required dependencies
 │── README.md              # Project documentation
+```
 
-Future Enhancements
+## Future Enhancements
 
-Implementing real-time noise reduction for better accuracy.
+- Implementing **real-time noise reduction** for better accuracy.
+- Adding **multi-factor authentication** (e.g., password + voice).
+- Deploying as a **cloud-based service** for wider accessibility.
+- Enhancing **voice spoofing detection** to prevent security breaches.
 
-Adding multi-factor authentication (e.g., password + voice).
+## Contributors
 
-Deploying as a cloud-based service for wider accessibility.
+- **Mohammed Ishaque Inamdar** ([GitHub](https://github.com/Mohammed8ishaque))
 
-Enhancing voice spoofing detection to prevent security breaches.
+## License
 
-Contributors
-
-Mohammed Ishaque Inamdar (GitHub)
-
-License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
