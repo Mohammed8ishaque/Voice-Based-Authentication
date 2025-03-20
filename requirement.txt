@@ -1,0 +1,8 @@
+pyaudio
+wave
+soundfile
+librosa
+numpy
+scipy
+scikit-learn
+azure-storage-blob
